@@ -16,7 +16,7 @@
 	let toggleBtn = null;
 	if (typeof SpeechRecognition === "undefined") {
 		startBtn.remove();
-		result.innerHTML = "<b>Browser does not support Speech API. Please download latest chrome.<b>";
+		result.innerHTML = "<b>Browser does not support Speech API. Please download latest version of your browser.<b>";
 	} else {
 		const recognition = new SpeechRecognition();
 		recognition.continuous = true;
@@ -30,7 +30,7 @@
 
 				const response = process(text);
 				const p = document.createElement("p");
-				p.innerHTML = `You said: ${text} </br>Siri said: ${response}`;
+				p.innerHTML = `You said: ${text} </br>ethanAI said: ${response}`;
 				processing.innerHTML = "";
 				result.appendChild(p);
 
@@ -64,7 +64,7 @@
 			case "hello":
 				response = "hi, how are you doing?"; break;
 			case "what'syourname":
-				response = "My name's Siri.";  break;
+				response = "My name's ethanAI!.";  break;
 			case "howareyou":
 				response = "I'm good."; break;
 			case "whattimeisit":
